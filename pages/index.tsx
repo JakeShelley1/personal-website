@@ -1,118 +1,182 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Head from "next/head";
+import Link from "next/link";
+import { AppButton, Layout } from "@/components";
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from "./index.module.css";
 
-export default function Home() {
+const Page = () => {
+  const title = "Jake's Website";
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Layout>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <div className="pb-8 p-4 align-center mx-auto max-w-2xl">
+        <div className="flex flex-col align-center mt-9 mb-16">
+          <h4 className="text-3xl mb-6">Hi, I&apos;m Jake</h4>
+          <p className="text-lg mb-4 opacity-90">
+            I&apos;m a software engineer from New York City.
+          </p>
+          <p className="text-lg mb-4 opacity-90">
+            I&apos;ve been working at{" "}
+            <a
+              target="_blank"
+              rel="norefferer"
+              href="https://ads.spotify.com"
+              className={`${styles.spotify} ${styles.link}`}
+            >
+              Spotify
+            </a>{" "}
+            since they acquired{" "}
+            <a
+              target="_blank"
+              href="https://techcrunch.com/2022/02/16/spotify-snaps-up-podcast-measurement-and-analytics-firms-podsights-and-chartable/"
+              rel="norefferer"
+              className={`${styles.chartable} ${styles.link}`}
+            >
+              Chartable
+            </a>{" "}
+            back in 2021.
+          </p>
+          <p className="text-lg mb-4 opacity-90">
+            Lately, I&apos;ve been most interested in using AI to create in-game
+            characters, tools for content creators, and consumer apps. If
+            you&apos;d like to chat you can reach me by{" "}
+            <a
+              className={`${styles.link} ${styles.mail}`}
+              href="mailto:jake@getstreamkit.com"
+            >
+              email
+            </a>{" "}
+            or on{" "}
+            <a
+              target="_blank"
+              rel="norefferer"
+              href="https://discord.com/channels/@me/584819000140103680"
+              className={`${styles.link} ${styles.discord}`}
+            >
+              discord
+            </a>
+            .
+          </p>
+          <p className="text-lg mb-4 opacity-90">
+            I&apos;m also trying to{" "}
+            <Link href="blog" className={`${styles.blog} ${styles.link}`}>
+              write more.
+            </Link>
+          </p>
+          <p className="text-lg opacity-90">
+            Below are some of the projects and apps I&apos;ve worked on. I may
+            also be available for{" "}
+            <Link
+              href="/consulting"
+              className={`${styles.work} ${styles.link}`}
+            >
+              consulting work
+            </Link>
+            .
+          </p>
+        </div>
+        <div className={styles.iconGrid}>
+          <AppButton
+            roundImageCorners
+            imageSrc="/streamkit.png"
+            link="https://apps.apple.com/us/app/streamkit-share-stream-clips/id1571506295"
+            title="StreamKit"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/floofai.png"
+            link="https://apps.apple.com/us/app/ai-avatar-for-dogs-floof-ai/id1659283776"
+            title="FloofAI"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/promptai.png"
+            link="https://apps.apple.com/us/app/prompt-ai-draw-anything/id1645128182"
+            title="PromptAI"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/linkdrop.png"
+            link="https://linkdrop.co"
+            title="Linkdrop"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/todo.png"
+            link="https://apps.apple.com/us/app/todo-lists-organize-your-life/id1329807333"
+            title="Todo"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/blockninjas.png"
+            link="https://itunes.apple.com/us/app/block-ninjas/id956615108?mt=8"
+            title="BlockNinjas"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/colorpop.png"
+            link="https://apps.apple.com/us/app/color-pop-the-game/id1202606108"
+            title="ColorPop"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/emit.png"
+            link="https://apps.apple.com/us/app/emit-track-your-carbon-emissions/id1182170211"
+            title="Emit"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/talkboard.png"
+            dead
+            title="Talkboard"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/radiou.png"
+            dead
+            title="RadioU"
+          />
+          <AppButton
+            roundImageCorners
+            imageSrc="/soundcheck.png"
+            dead
+            title="Soundcheck"
+          />
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <div className="hidden">
+        <img
+          fetchPriority="high"
+          alt=""
+          aria-hidden="true"
+          src="/spotify.png"
+        />
+        <img
+          fetchPriority="high"
+          alt=""
+          aria-hidden="true"
+          src="/chartable.png"
+        />
+        <img fetchPriority="high" alt="" aria-hidden="true" src="/mail.png" />
+        <img fetchPriority="high" alt="" aria-hidden="true" src="/blog.png" />
+        <img
+          fetchPriority="high"
+          alt=""
+          aria-hidden="true"
+          src="/discord.png"
+        />
+        <img
+          fetchPriority="high"
+          alt=""
+          aria-hidden="true"
+          src="/consulting.png"
         />
       </div>
+    </Layout>
+  );
+};
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Page;

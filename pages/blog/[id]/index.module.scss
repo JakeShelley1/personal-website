@@ -1,0 +1,57 @@
+.post {
+  color: #fff;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 42rem;
+
+  blockquote {
+    margin: 40px 20px;
+  }
+
+  img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 32px }
+  h2 { font-size: 24px }
+
+  hr {
+    border: 1px solid #EEEEEE !important;
+    margin: 20px 0
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace, system;
+    font-size: 16px;
+  }
+
+  pre {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    overflow: scroll;
+    border-left: 2px solid #357EDD;
+    margin: 40px 0
+  }
+
+  p {
+    cursor: url('/text.png'), default;
+    margin: 16px 0;
+    font-size: 19px;
+    color: #fff;
+    line-height: 1.5;
+    opacity: 95%;
+
+    code {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 2px 4px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: #0ea5e9;
+  }
+}

@@ -1,0 +1,166 @@
+.main {
+  position: relative;
+}
+
+.dead:hover {
+  filter: saturate(0);
+  opacity: 0.8;
+  cursor: url(/rip.png) 4 4, pointer;
+}
+
+.main .text {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  filter: blur(20px) opacity(0.3);
+  transition: filter 150ms linear;
+  font-size: 12px;
+  font: system;
+  z-index: 999;
+}
+
+.main:hover .text {
+  filter: blur(0) opacity(1);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 24%;
+  transition: filter 300ms linear;
+}
+
+.container:hover {
+  filter: brightness(95%);
+  transition: filter 300ms linear;
+}
+
+.main:hover .mainImageContainer {
+  filter: blur(20px) opacity(0.3);
+}
+
+.mainImageContainer {
+  transition: filter 150ms linear;
+  height: 60%;
+  width: 60%;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.dead {
+  cursor: url('/rip.png') 4 4;
+}
+
+.blurredImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(2) translateZ(0);
+  filter: blur(20px) opacity(0.3) saturate(250%);
+  pointer-events: none;
+}
+
+.bottomImage {
+  position: absolute;
+  height: 50%;
+  bottom: -60%;
+  transform: scale(2.5) translateZ(0);
+  filter: blur(15px) opacity(0.1) brightness(20%);
+  pointer-events: none;
+  transform: scale(2.5) translateZ(0);
+}
+
+.firstShadowImage {
+  bottom: 24%;
+  transform: scale(1) translateZ(0);
+  filter: blur(45px) opacity(1) brightness(1.2);
+  width: 100%;
+  pointer-events: none;
+  height: 100%;
+}
+
+.shadowImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  bottom: -6%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.5) translateZ(0);
+  filter: blur(20px) opacity(0.7);
+  transition: filter 150ms ease;
+}
+
+.buttonShadowImage {
+  position: absolute;
+  transform: scale(1) translateZ(0);
+  pointer-events: none;
+  filter: blur(45px) opacity(0.7);
+}
+
+.border {
+  position: absolute;
+  background: white;
+  height: 70%;
+  border-radius: 999px 0 0 0;
+  z-index: 2;
+  filter: blur(5px);
+  opacity: 0.05;
+  right: 8%;
+  width: 5%;
+  top: 16%;
+}
+
+.borderLeft {
+  position: absolute;
+  background: white;
+  height: 70%;
+  border-radius: 999px 0 0 0;
+  z-index: 2;
+  filter: blur(5px);
+  opacity: 0.05;
+  left: 8%;
+  width: 5%;
+  top: 16%
+}
+
+.borderTop {
+  position: absolute;
+  background: white;
+  height: 10%;
+  width: 70%;
+  border-radius: 999px 0 0 0;
+  z-index: 2;
+  filter: blur(5px);
+  opacity: 0.05;
+  top: 8%;
+}
+
+.bottomShadowImage {
+  position: absolute;
+  bottom: -24%;
+  filter: blur(45px) opacity(0.25);
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
