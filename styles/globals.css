@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: #0D0D0D;
-  --background-end-rgb: #0D0D0D;
+  --background-start-rgb: #0d0d0d;
+  --background-end-rgb: #0d0d0d;
 }
 
 html {
@@ -33,5 +33,9 @@ html {
 }
 
 .cursor-text {
-  cursor: url('/text.png'), default;
+  cursor: url("/text.png"), default;
+}
+
+.cursor-pointer {
+  cursor: url(/pointer.png), default;
 }
